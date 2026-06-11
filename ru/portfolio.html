@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - GxP va SMT Konsalting</title>
+    <style>
+        :root { 
+            --chortoq-blue: #00A3E0; --chortoq-green: #43B02A; --chortoq-dark: #112233;
+            --pure-white: #FFFFFF; --bg-crystal: #F4F9FC; --text-muted: #627D93;      
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--bg-crystal); color: var(--chortoq-dark); line-height: 1.6; }
+        header { background-color: rgba(255, 255, 255, 0.95); display: flex; justify-content: space-between; align-items: center; padding: 5px 8%; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 163, 224, 0.1); }
+        .logo { display: flex; align-items: center; }
+        .logo img { height: 120px; width: auto; object-fit: contain; }
+        nav a { text-decoration: none; color: var(--chortoq-dark); margin: 0 20px; font-weight: 500; font-size: 15px; transition: 0.3s; }
+        nav a:hover, nav a.active { color: var(--chortoq-blue); }
+        nav a.active::after { content: ''; position: absolute; bottom: -8px; left: 25%; width: 50%; height: 2px; background-color: var(--chortoq-blue); border-radius: 2px; }
+        .lang-switcher a { text-decoration: none; color: var(--chortoq-dark); padding: 5px 12px; border: 1px solid rgba(0, 163, 224, 0.2); border-radius: 30px; margin-left: 5px; font-weight: 600; font-size: 13px; }
+        .lang-switcher a.active { background-color: var(--chortoq-blue); color: var(--pure-white); border-color: var(--chortoq-blue); }
+
+        .portfolio-hero { background: linear-gradient(135deg, #FFFFFF 0%, #E6F4FA 100%); padding: 60px 8%; text-align: center; }
+        .portfolio-hero h1 { font-size: 42px; color: var(--chortoq-dark); margin-bottom: 15px; }
+        .portfolio-container { padding: 60px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; max-width: 1150px; margin: 0 auto; }
+        .portfolio-card { background: var(--pure-white); padding: 35px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.01); border-top: 3px solid var(--chortoq-green); }
+        .portfolio-card h3 { color: var(--chortoq-dark); margin-bottom: 12px; font-weight: 700; }
+        .status-badge { display: inline-block; background-color: rgba(67,176,42,0.08); color: var(--chortoq-green); padding: 4px 14px; border-radius: 30px; font-size: 12px; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; }
+        .portfolio-img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="../assets/logo.png" alt="Logo"></div>
+        <nav>
+            <a href="index.html">Bosh sahifa</a>
+            <a href="services.html">Xizmatlar</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="about.html">Biz haqimizda</a>
+            <a href="contact.html">Aloqa</a>
+        </nav>
+        <div class="lang-switcher">
+            <a href="../uz/portfolio.html" class="lang-btn active">UZ</a>
+            <a href="../ru/portfolio.html" class="lang-btn">RU</a>
+            <a href="../en/portfolio.html" class="lang-btn">EN</a>
+        </div>
+    </header>
+
+    <section class="portfolio-hero">
+        <h1>Muvaffaqiyatli Keyslarimiz</h1>
+    </section>
+
+    <div class="portfolio-container">
+        <div class="portfolio-card">
+            <img src="../assets/gxp.jpg" alt="GMP Project" class="portfolio-img">
+            <span class="status-badge">Muvaffaqiyatli yakunlangan</span>
+            <h3>Farmatsevtika Zavodi (GMP)</h3>
+            <p>Yirik dori vositalari ishlab chiqaruvchi korxonada milliy GMP standarti talablari to'liq joriy etildi.</p>
+        </div>
+        <div class="portfolio-card">
+            <img src="../assets/portfolio.jpg" alt="GDP Project" class="portfolio-img">
+            <span class="status-badge">Muvaffaqiyatli yakunlangan</span>
+            <h3>Logistika Markazi (GDP)</h3>
+            <p>Tibbiy mahsulotlarni saqlash va tarqatish bilan shug'ullanuvchi omborxonada xalqaro GDP tizimi yo'lga qo'yildi.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xizmatlar - GxP va SMT Konsalting</title>
+    <style>
+        :root { 
+            --chortoq-blue: #00A3E0; --chortoq-green: #43B02A; --chortoq-dark: #112233;
+            --pure-white: #FFFFFF; --bg-crystal: #F4F9FC; --text-muted: #627D93;      
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--bg-crystal); color: var(--chortoq-dark); line-height: 1.6; }
+        
+        header { background-color: rgba(255, 255, 255, 0.95); display: flex; justify-content: space-between; align-items: center; padding: 5px 8%; shadow: 0 10px 30px rgba(0, 163, 224, 0.04); position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0, 163, 224, 0.1); }
+        .logo { display: flex; align-items: center; }
+        .logo img { height: 120px; width: auto; object-fit: contain; }
+        nav a { text-decoration: none; color: var(--chortoq-dark); margin: 0 20px; font-weight: 500; font-size: 15px; transition: 0.3s; position: relative; }
+        nav a:hover, nav a.active { color: var(--chortoq-blue); }
+        nav a.active::after { content: ''; position: absolute; bottom: -8px; left: 25%; width: 50%; height: 2px; background-color: var(--chortoq-blue); border-radius: 2px; }
+        .lang-switcher a { text-decoration: none; color: var(--chortoq-dark); padding: 5px 12px; border: 1px solid rgba(0, 163, 224, 0.2); border-radius: 30px; margin-left: 5px; font-weight: 600; font-size: 13px; }
+        .lang-switcher a.active { background-color: var(--chortoq-blue); color: var(--pure-white); border-color: var(--chortoq-blue); }
+
+        .services-hero { background: linear-gradient(135deg, #FFFFFF 0%, #E6F4FA 100%); padding: 60px 8%; text-align: center; border-bottom: 1px solid rgba(0, 163, 224, 0.1); }
+        .services-hero h1 { font-size: 42px; color: var(--chortoq-dark); margin-bottom: 15px; font-weight: 700; }
+        .services-hero p { font-size: 18px; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+
+        .main-container { padding: 60px 8%; max-width: 1200px; margin: 0 auto; }
+        .grid-section { margin-bottom: 60px; }
+        .grid-section h2 { font-size: 28px; color: var(--chortoq-dark); margin-bottom: 30px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .grid-section h2::before { content: ''; width: 4px; height: 25px; background-color: var(--chortoq-blue); border-radius: 2px; }
+        
+        .matrix-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .matrix-card { background: var(--pure-white); padding: 30px; border-radius: 16px; border: 1px solid #E2EBF2; transition: 0.3s; }
+        .matrix-card:hover { transform: translateY(-5px); border-color: var(--chortoq-blue); box-shadow: 0 15px 35px rgba(0,163,224,0.06); }
+        .matrix-card h3 { font-size: 20px; color: var(--chortoq-blue); margin-bottom: 15px; font-weight: 700; border-bottom: 2px solid var(--bg-crystal); padding-bottom: 10px; }
+        
+        .spec-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed #E2EBF2; font-size: 14px; }
+        .spec-item span:first-child { color: var(--text-muted); font-weight: 500; }
+        .spec-item span:last-child { color: var(--chortoq-dark); font-weight: 600; }
+        
+        .order-btn { display: block; width: 100%; text-align: center; margin-top: 20px; background-color: var(--bg-crystal); color: var(--chortoq-blue); padding: 10px; text-decoration: none; font-weight: 600; border-radius: 8px; transition: 0.3s; font-size: 14px; border: 1px solid rgba(0,163,224,0.1); }
+        .order-btn:hover { background-color: var(--chortoq-blue); color: var(--pure-white); }
+
+        .quick-order-section { background: var(--pure-white); padding: 45px; border-radius: 16px; box-shadow: 0 15px 45px rgba(0,163,224,0.04); border-top: 4px solid var(--chortoq-green); max-width: 600px; margin: 40px auto 0 auto; }
+        .quick-order-section h3 { font-size: 24px; color: var(--chortoq-dark); margin-bottom: 25px; text-align: center; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; }
+        .form-group input, .form-group select { width: 100%; padding: 14px; border: 1px solid #E2EBF2; border-radius: 8px; font-size: 16px; background-color: var(--bg-crystal); outline: none; }
+        .submit-btn { background-color: var(--chortoq-green); color: var(--pure-white); padding: 14px; border: none; border-radius: 30px; font-weight: 600; cursor: pointer; width: 100%; transition: 0.3s; text-transform: uppercase; font-size: 14px; }
+        .submit-btn:hover { background-color: #369620; box-shadow: 0 10px 20px rgba(67,176,42,0.2); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="../assets/logo.png" alt="Logo"></div>
+        <nav>
+            <a href="index.html">Bosh sahifa</a>
+            <a href="services.html" class="active">Xizmatlar</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html">Biz haqimizda</a>
+            <a href="contact.html">Aloqa</a>
+        </nav>
+        <div class="lang-switcher">
+            <a href="../uz/services.html" class="lang-btn active">UZ</a>
+            <a href="../ru/services.html" class="lang-btn">RU</a>
+            <a href="../en/services.html" class="lang-btn">EN</a>
+        </div>
+    </header>
+
+    <section class="services-hero">
+        <h1>Konsalting Spetsifikatsiyalari</h1>
+        <p>Korxonalarni xalqaro standartlar formatiga o'tkazish xizmatlari metrikasi.</p>
+    </section>
+
+    <div class="main-container">
+        <div class="grid-section">
+            <h2>GxP Standartlari Yo'nalishlari</h2>
+            <div class="matrix-grid">
+                <div class="matrix-card">
+                    <h3>GMP Standarti</h3>
+                    <div class="spec-item"><span>Yo'nalish:</span><span>Yaxshi Ishlab Chiqarish</span></div>
+                    <div class="spec-item"><span>Gap-Tahlil:</span><span>3-5 ish kuni</span></div>
+                    <div class="spec-item"><span>Hujjatlashtirish:</span><span>To'liq paket (SOP)</span></div>
+                    <div class="spec-item"><span>Inspeksiya:</span><span>100% kuzatuv xizmati</span></div>
+                    <a href="#order-block" class="order-btn" onclick="setService('GxP - GMP Konsalting')">Tanlash</a>
+                </div>
+                <div class="matrix-card">
+                    <h3>GDP Standarti</h3>
+                    <div class="spec-item"><span>Yo'nalish:</span><span>Yaxshi Tarqatish (Ombor)</span></div>
+                    <div class="spec-item"><span>Validatsiya:</span><span>Termo-Xaritalash</span></div>
+                    <div class="spec-item"><span>Tizim joriy etish:</span><span>Xavflarni tahlil qilish</span></div>
+                    <div class="spec-item"><span>Audit muddati:</span><span>Tezkor (7 kunda)</span></div>
+                    <a href="#order-block" class="order-btn" onclick="setService('GxP - GDP Konsalting')">Tanlash</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-order-section" id="order-block">
+            <h3>Xizmatga tezkor buyurtma berish</h3>
+            <form id="serviceTgForm">
+                <div class="form-group">
+                    <label>Tanlangan xizmat yo'nalishi</label>
+                    <select id="selectedService" required>
+                        <option value="" disabled selected>Xizmat turini tanlang</option>
+                        <option value="GxP - GMP Konsalting">GxP - GMP Konsalting</option>
+                        <option value="GxP - GDP Konsalting">GxP - GDP Konsalting</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Ismingiz</label>
+                    <input type="text" id="clientName" placeholder="Ismingizni kiriting" required>
+                </div>
+                <div class="form-group">
+                    <label>Aloqa telefoni</label>
+                    <input type="tel" id="clientPhone" value="+998" required>
+                </div>
+                <button type="submit" class="submit-btn">Buyurtmani yuborish</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function setService(serviceName) { document.getElementById('selectedService').value = serviceName; }
+        document.getElementById('serviceTgForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const token = "7055977935:AAExxxxxxxxxx"; const chat_id = "123456789";
+            const service = document.getElementById('selectedService').value;
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+            const fullText = `📦 YANGI XIZMAT BUYURTMASI!\n\n🛠 Yo'nalish: ${service}\n👤 Buyurtmachi: ${name}\n📞 Telefon: ${phone}`;
+            const url = `https://telegram.org{token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(fullText)}`;
+            fetch(url).then(response => {
+                if(response.ok) { alert('Buyurtmangiz muvaffaqiyatli qabul qilindi!'); document.getElementById('serviceTgForm').reset(); }
+            });
+        });
+    </script>
+</body>
+</html>s

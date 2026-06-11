@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biz haqimizda - GxP va SMT Konsalting</title>
+    <style>
+        :root { 
+            --chortoq-blue: #00A3E0; --chortoq-green: #43B02A; --chortoq-dark: #112233;
+            --pure-white: #FFFFFF; --bg-crystal: #F4F9FC; --text-muted: #627D93;      
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--bg-crystal); color: var(--chortoq-dark); line-height: 1.6; }
+        header { background-color: rgba(255, 255, 255, 0.95); display: flex; justify-content: space-between; align-items: center; padding: 5px 8%; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0, 163, 224, 0.1); }
+        .logo { display: flex; align-items: center; }
+        .logo img { height: 120px; width: auto; object-fit: contain; }
+        nav a { text-decoration: none; color: var(--chortoq-dark); margin: 0 20px; font-weight: 500; font-size: 15px; transition: 0.3s; position: relative; }
+        nav a:hover, nav a.active { color: var(--chortoq-blue); }
+        nav a.active::after { content: ''; position: absolute; bottom: -8px; left: 25%; width: 50%; height: 2px; background-color: var(--chortoq-blue); border-radius: 2px; }
+        .lang-switcher a { text-decoration: none; color: var(--chortoq-dark); padding: 5px 12px; border: 1px solid rgba(0, 163, 224, 0.2); border-radius: 30px; margin-left: 5px; font-weight: 600; font-size: 13px; }
+        .lang-switcher a.active { background-color: var(--chortoq-blue); color: var(--pure-white); border-color: var(--chortoq-blue); }
+
+        .about-hero { background: linear-gradient(135deg, #FFFFFF 0%, #E6F4FA 100%); padding: 60px 8%; text-align: center; }
+        .about-content { display: flex; gap: 60px; align-items: center; max-width: 1150px; width: 100%; flex-wrap: wrap; margin: 0 auto; padding: 60px 8%; }
+        .about-img { flex: 1; min-width: 380px; height: 400px; object-fit: cover; border-radius: 16px; box-shadow: 0 15px 45px rgba(0,163,224,0.06); }
+        .about-text { flex: 1; min-width: 380px; background: var(--pure-white); padding: 45px; border-radius: 16px; border-left: 4px solid var(--chortoq-blue); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="../assets/logo.png" alt="Logo"></div>
+        <nav>
+            <a href="index.html">Bosh sahifa</a>
+            <a href="services.html">Xizmatlar</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html" class="active">Biz haqimizda</a>
+            <a href="contact.html">Aloqa</a>
+        </nav>
+        <div class="lang-switcher">
+            <a href="../uz/about.html" class="lang-btn active">UZ</a>
+            <a href="../ru/about.html" class="lang-btn">RU</a>
+            <a href="../en/about.html" class="lang-btn">EN</a>
+        </div>
+    </header>
+
+    <section class="about-hero">
+        <h1>Kompaniyamiz Haqida</h1>
+    </section>
+
+    <div class="about-content">
+        <img src="../assets/about.jpg" alt="Team" class="about-img">
+        <div class="about-text">
+            <p>Mahalliy va xorijiy ishlab chiqarish korxonalariga xalqaro GxP va Sifatni boshqarish tizimlari (ISO) standartlarini muvaffaqiyatli tatbiq etishda yuqori sifatli konsalting xizmatlarini ko'rsatamiz. Biz korxonalarning xavfsiz, samarali va kristall toza mahsulotlar ishlab chiqarishiga hamda xalqaro inspeksiyalardan muvaffaqiyatli o'tishiga zamin yaratamiz.</p>
+        </div>
+    </div>
+</body>
+</html>
